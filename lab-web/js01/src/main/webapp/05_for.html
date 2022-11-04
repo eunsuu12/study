@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript for</h1>
+    <div id="result"></div>
+    
+    <script>
+    const result= document.getElementById('result'); // <div> element를 찾음.
+    let text= ''; // 구구단 2단의 내용을 작성할 문자열
+    for (let n= 1; n< 10; n++){
+    	// text+= '2 X '+n+' = '+(2*n)+'<br/>';
+    	text+= `2 X ${n} = ${2*n} <br/>`;
+    }
+    result.innerHTML= text;
+    
+    result.innerHTML+= '<hr/>'; // horizontal ruler
+    
+    // 구구단 2단부터 9단까지 이어서 출력
+    let q1= '';
+    for(let m= 3; m< 10; m++){
+    	for (let n= 1; n< 10; n++){
+            q1+= `${m} X ${n} = ${m*n} <br/>`;
+        }
+    	if(m!= 9){
+    		q1+= '----------------<br/>';
+    	}
+    }
+    result.innerHTML+= q1;
+    result.innerHTML+= '<hr/>';
+    
+    // 구구단을 2단은 2*2까지, ..., 9단은 9*9까지 출력.
+    let q2= '';
+    for(let m= 2; m< 10; m++){
+        for (let n= 1; n< 10; n++){
+        	if(n> m){
+        		break;
+        	}
+            q2+= `${m} X ${n} = ${m*n} <br/>`;
+        }
+        if(m!= 9){
+            q2+= '----------------<br/>';
+        }
+    }
+    result.innerHTML+= q2;
+    result.innerHTML+= '<hr/>';
+    
+    </script>
+</body>
+</html>

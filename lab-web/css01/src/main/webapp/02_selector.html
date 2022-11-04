@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+<style>
+    /* tag selector*/
+    h1 {
+        color: LightBlue;
+        text-shadow: 2px 2px 2px gray;
+    }
+    
+    div {
+        border: 2px solid gray;
+        margin: 16px;
+        padding: 8px;
+        background-color: ivory;
+    }
+    
+    /* class selector */
+    .c1 {
+        background-color: LavenderBlush;
+        color: LightPink;
+    }
+    
+    /* id selector */
+    #id1 {
+        background-color: HoneyDew;
+        color: LightGreen;
+    }
+    
+    p.c1 {
+        background-color: LightYellow;
+        color: Khaki;
+    }
+    
+    p#id1 {
+        background-color: LightCyan;
+        color: MediumAquaMarine;
+    }
+</style>
+</head>
+<body>
+    <h1>CSS Selector(선택자)</h1>
+    <!-- 
+        CSS 기본 문법:
+        selector {property: value; ...}
+        
+        selector(선택자): HTML element(요소)를 찾는 방법.
+        1. 태그 이름(tag selector): tag_name
+        2. 클래스 속성 값(class selector): .class_name
+        3. 아이디 속성 값(id selector): #id
+        4. *: 모든 HTML 요소들.
+        5. pseudo-selector:
+     -->
+     
+     <div class="c1">Division 1, Class 1</div>
+     <div class="c1">Division 2, Class 1</div>
+     <div id="id1">Division 3, ID 1</div>
+     
+     <p class= "c1"> Paragraph 1, Class 1</p>
+     <p class= "c1"> Paragraph 2, Class 1</p>
+     <p id= "id1"> Paragraph 3, ID 1</p>
+</body>
+</html>

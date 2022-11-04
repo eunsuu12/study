@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<style>
+    div{
+        border: 1px solid gray;
+        margin: 8px;
+        padding: 8px;
+    }
+    button{
+        margin: 0 0 20px 8px;
+        width: 80px;
+        height: 32px;
+        font-weight: bold;
+        background-color: pink;
+        border: 1px solid gray;
+        border-radius: 4px;
+    }
+    h1{color: #ccc;}
+    h2{color: #aaa;}
+    h3{color: #888;}
+    h4{color: #666;}
+    h5{color: #444;}
+    h6{color: #222;}
+    table{text-align: center;}
+    th, td{width: 80px;}
+</style>
+</head>
+<body>
+    <h1>Heading 만들기</h1>
+    <button onclick="makeHeadings()">Click</button>
+    <div id="result">H1 ~H6</div>
+    
+    <h2>테이블 Body 만들기</h2>
+    <button onclick="makeTableBody()">Click</button>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </thead>
+        <tbody id="tblBody">
+        </tbody>
+    </table>
+    
+    <script>
+    function makeHeadings(){
+        const result= document.getElementById('result');
+        let heading= '';
+        for(let n=1; n<=6; n++){
+        	heading+= `<h${n}>Heading ${n}</h${n}>`;
+        }
+        result.innerHTML= heading;	
+    }
+    
+    function makeTableBody(){
+    	const tblBody= document.getElementById('tblBody');
+    	let body= '';
+    	for(let n=10; n>=1; n--){
+    		body+=
+    			  `<tr>
+    			  <td>${n}</td>
+    			  <td>제목${n}</td>
+    			  <td>admin</td>
+    		      </tr>`;
+    	}
+    	tblBody.innerHTML= body;
+    }
+    </script>
+</body>
+</html>

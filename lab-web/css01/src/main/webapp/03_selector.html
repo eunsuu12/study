@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+
+<style>
+    section{
+        border: 2px solid gray;
+        margin: 16px;
+        padding: 8px;
+    }
+    
+    #sec1> p{
+        color: LightCoral;
+    }
+    
+    #sec2 p{
+        color: LightSeaGreen;
+    }
+    
+    /* 주의: 여러개의 요소들을 함께 선택할 때 쉼표를 사용*/
+    #sec3, p{
+        border: 4px dotted OldLace;
+    }
+</style>
+</head>
+<body>
+
+    <h1>CSS Selector(선택자)</h1>
+    <!-- 
+        자식(child), 자손(descendant) 요소 찾기:
+        - child element: HTML 계층 구조에서 "바로" 아래에 있는 요소.
+        - descendant element: HTML 계층 구조에서 아래에 있는 "모든" 요소.
+        
+        - child selector: 부모요소 > 자식요소
+        - descendant selector: 조상요소 자손요소
+        
+     -->
+     
+     <section id="sec1">
+        <p>Section 1, Paragraph 1</p>
+        <p>Section 1, Paragraph 2</p>
+        <article>
+            <p>Section &gt; Article &gt; paragraph</p>
+        </article>
+     </section>
+     
+     <section id="sec2">
+        <div>Section &gt; Division</div>
+        <p>Section 2, Paragraph 1</p>
+        <p>Section 2, Paragraph 2</p>
+        <article>
+            <p>Section &gt; Article &gt; paragraph</p>
+        </article>
+     </section>
+     
+     <section id="sec3">
+        <p>Section 3, Paragraph 1</p>
+        <p>Section 3, Paragraph 2</p>
+        <article>
+            <p>Section &gt; Article &gt; paragraph</p>
+        </article>
+     </section>
+</body>
+</html>
