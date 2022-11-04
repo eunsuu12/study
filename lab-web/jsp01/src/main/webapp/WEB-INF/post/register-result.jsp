@@ -29,10 +29,10 @@
 </style>
 </head>
 <body>
-    <h2>포스팅 결과</h2>
+    <h2>포스팅 결과 </h2>
     
         <div>
-            <label>번호</label>
+            <label>번호  </label>
             <input type="number" value="${ post.id }" readonly/>
         </div>
         <div>
