@@ -32,7 +32,7 @@
     <h2>포스팅 결과 </h2>
     
         <div>
-            <label>번호  </label>
+            <label>번호 1 </label>
             <input type="number" value="${ post.id }" readonly/>
         </div>
         <div>
