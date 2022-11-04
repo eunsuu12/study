@@ -21,7 +21,7 @@ public class DbcpTest {
     @Test
     public void testHikariCP() throws SQLException {
         // HikariCP 설정을 위한 객체 생성.
-        HikariConfig config= new HikariConfig();
+        HikariConfig config= new HikariConfig();  
         
         // Connection Pool(Data Source)생성을 위한 환경 설정 세팅.
         config.setDriverClassName("oracle.jdbc.OracleDriver"); // 연결을 맺기 위한 DB드라이버.
