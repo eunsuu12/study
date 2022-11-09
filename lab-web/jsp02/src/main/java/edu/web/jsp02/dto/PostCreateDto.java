@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 // DTO(Data Transfer Object): 계층들 사이에서 값을 전달할 때 사용하는 객체.
 //  controller(web)계층과 service계층 사이에서
 //  메서드를 호출할 때 argument의 타입 또는 메서드의 리턴 타입으로 사용되는 객체.
-
+ 
 @NoArgsConstructor //기본 생성자
 @AllArgsConstructor // 모든 필드들을 argument로 갖는 생성
 @Builder // Builder패턴에서 필요한 내부 클래스와 메서드들

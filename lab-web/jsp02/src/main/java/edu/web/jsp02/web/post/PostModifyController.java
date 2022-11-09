@@ -1,4 +1,4 @@
-package edu.web.jsp02.web;
+package edu.web.jsp02.web.post;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.web.jsp02.domain.Post;
+import edu.web.jsp02.dto.PostUpdateDto;
 import edu.web.jsp02.service.PostService;
 import edu.web.jsp02.service.PostServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -52,14 +53,14 @@ public class PostModifyController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   log.info("doPost()");
         
-        Integer id = Integer.valueOf(request.getParameter("id"));
+        Integer id= Integer.valueOf(request.getParameter("id"));
         String title= request.getParameter("title");
         String content= request.getParameter("content");
-        Post entity= Post.builder()
+        PostUpdateDto dto= PostUpdateDto.builder()
                 .id(id).title(title).content(content)
                 .build();
         
-        int result = postService.update(entity);
+        int result = postService.update(dto);
         log.info("update result = {}", result);
         
         response.sendRedirect("/jsp02/post/detail?id="+id);

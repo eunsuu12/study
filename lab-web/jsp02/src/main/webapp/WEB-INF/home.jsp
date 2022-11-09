@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MVC</title>
+    <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>">
 </head>
 <body>
 <div>
@@ -18,7 +19,10 @@
     <div>
         <ul>
             <li>
-                <a href="post">포스트 전체 목록</a>
+                <a href="post/list">포스트 전체 목록</a>
+            </li>
+            <li>
+                <a href="user/list">USER 전체 목록</a>
             </li>
         </ul>
     </div>

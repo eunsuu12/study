@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>JSP 2</title>
+    <meta charset="UTF-8">
+    <title>JSP 2</title>
 </head>
 <body>
     <div>
@@ -18,7 +18,7 @@
                     <a href="${mainPage }">메인 페이지</a>
                 </li>
                 <li>
-                    <c:url var="postListPage" value="/post"></c:url>
+                    <c:url var="postListPage" value="/post/list"></c:url>
                     <a href="${postListPage }">포스트 목록</a>
                 </li>
                 <li>
@@ -83,6 +83,12 @@
     const btnUpdate= document.querySelector('#btnUpdate');
     btnUpdate.addEventListener('click', function(event){
     	event.preventDefault();
+    	const title= document.querySelector('#title').value;
+    	const content= document.quertSelector('#content').value;
+    	if(title== ''||content== ''){
+    		alert('제목과 내용을 입력해주세요.');
+    		return; // 이벤트 리스너 종료
+    	}
         form.action= '${postModifyPage}';
         form.method= 'post';
         form.submit();

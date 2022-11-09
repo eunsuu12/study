@@ -1,4 +1,4 @@
-package edu.web.jsp02.web;
+package edu.web.jsp02.web.post;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

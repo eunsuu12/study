@@ -18,7 +18,7 @@
                     <a href="${mainPage }">메인 페이지</a>
                 </li>
                 <li>
-                    <c:url var="postListPage" value="/post"></c:url>
+                    <c:url var="postListPage" value="/post/list"></c:url>
                     <a href="${postListPage }">포스트 목록</a>
                 </li>
                 <li>
