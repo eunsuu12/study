@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MVC</title>
-    <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>">
 </head>
 <body>
 <div>
