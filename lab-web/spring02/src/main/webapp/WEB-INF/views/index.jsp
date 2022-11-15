@@ -7,6 +7,23 @@
 <title>Spring02</title>
 </head>
 <body>
-    <h1>메인 페이지</h1>
+    <div>
+    
+        <div>
+            <h1>메인 페이지</h1>
+        </div>
+        
+        <div>
+            <ul>
+                <li>
+                    <a href="post/list">포스트 전체 목록</a>
+                </li>
+                <li>
+                    <a href="user/list">USER 전체 목록</a>
+                </li>
+            </ul>
+        </div>
+    
+    </div>
 </body>
 </html>

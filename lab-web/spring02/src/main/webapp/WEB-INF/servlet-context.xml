@@ -25,6 +25,6 @@
     
     <!-- 특정 패키지에서 컴포넌트 애너테이션(@Controller, @RestController, ...)이
         설정된 클래스들을 bean으로 관리(객체 생성). -->
-    <context:component-scan base-package="com.example.spring02.web"></context:component-scan>
+    <context:component-scan base-package="com.example.spring02.web" />
     
 </beans>
