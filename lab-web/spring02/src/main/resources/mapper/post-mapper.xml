@@ -22,7 +22,7 @@
     </select>
     
     <update id="updateTitleAndContentById">
-        set TITLE= #{title}, CONTENT= #{content}, MODIFIED_TIME= sysdate
+        update POSTS set TITLE= #{title}, CONTENT= #{content}, MODIFIED_TIME= sysdate
         where ID= #{id} 
     </update>
     

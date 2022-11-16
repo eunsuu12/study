@@ -24,8 +24,7 @@
     <nav>
         <ul class="nav bg-light">
             <li class="nav-item">
-                <c:url var="postListPage" value="/post/list"></c:url>
-                <a class="nav-link active" href="${ postListPage }">목록 페이지</a>
+                <a class="nav-link active" href="#">LINK 1</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">LINK 2</a>
