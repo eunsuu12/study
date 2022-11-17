@@ -38,6 +38,29 @@
     </nav>
     
     <main class="my-2">
+        <div class="bg-light my-2 p-2">
+            <c:url var="postSearchPage" value="/post/search"></c:url>
+            <form action="${ postSearchPage }" method="get">
+                <div class="row">
+                    <div class="col-4">
+                        <select class="form-control" name="type">
+                            <option value="t">제목</option>
+                            <option value="c">내용</option>
+                            <option value="tc">제목 + 내용</option>
+                            <option value="a">작성자</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" 
+                            type="text" name="keyword" placeholder="검색어" required autofocus />
+                    </div>
+                    <div class="col-2">
+                        <input class="form-control btn btn-outline-success" type="submit" value="검색" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        
         <div class="card">
             <table class="table table-hover">
                 <thead>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.spring02.domain.Post;
 import com.example.spring02.dto.PostCreateDto;
+import com.example.spring02.dto.PostSearchDto;
 import com.example.spring02.dto.PostUpdateDto;
 import com.example.spring02.service.PostService;
 
@@ -73,11 +74,18 @@ public class PostController {
     }
     
     @PostMapping("/update")
-    public String update(PostUpdateDto dto) {
+    public String update(PostUpdateDto dto, Model model) {
         log.info("update(dto= {}", dto);
         postService.update(dto);
-        return "redirect:/post/detail/?id="+dto.getId();
+        model.addAttribute("id", dto.getId());
+        return "redirect:/post/detail";
     }
     
-    // TODO: 새글작성/ 수정페이지 / 수정 / 삭제 컨트롤러 메서드
+   @GetMapping("/search")
+   public String search(PostSearchDto dto, Model model) {
+       log.info("search(dto= {}", dto);
+       List<Post> result= postService.searchByKeyword(dto);
+       model.addAttribute("list", result);
+       return "/post/list";
+   }
 }

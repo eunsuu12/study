@@ -29,4 +29,24 @@
     <delete id="deleteById">
         delete from POSTS where ID= #{id}
     </delete>
+    
+    <select id="selectByKeywordOrderByIdDesc" resultType="com.example.spring02.domain.Post">
+        select * from POSTS
+        where
+        <if test="type== 't'.toString()">
+            lower(TITLE) like #{keyword}
+        </if>
+        <if test="type== 'c'.toString()">
+            lower(CONTENT) like #{keyword}
+        </if>
+        <if test="type== 'tc'.toString()">
+            lower(TITLE) like #{keyword}
+            or
+            lower(CONTENT) like #{keyword}
+        </if>
+        <if test="type== 'a'.toString()">
+            lower(AUTHOR) like #{keyword}
+        </if>
+        order by ID desc
+    </select>
 </mapper>

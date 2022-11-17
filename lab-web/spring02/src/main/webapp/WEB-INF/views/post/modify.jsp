@@ -97,6 +97,12 @@ btnDelete.addEventListener('click',function(event){
 const btnUpdate= document.querySelector('#btnUpdate');
 btnUpdate.addEventListener('click',function(event){
 	event.preventDefault();
+	const title = document.querySelector('#title').value;
+    const content = document.querySelector('#content').value;
+    if (title == '' || content == '') {
+        alert('제목 또는 내용은 반드시 입력!');
+        return;
+    }
     form.action= '${postUpdatePage}';
     form.method= 'post';
     form.submit();
