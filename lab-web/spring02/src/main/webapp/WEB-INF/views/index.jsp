@@ -25,13 +25,14 @@
         <ul class="nav bg-light">
             <li class="nav-item">
                 <c:url var="postListPage" value="/post/list"></c:url>
-                <a class="nav-link active" href="${ postListPage }">목록 페이지</a>
+                <a class="nav-link active" href="${ postListPage }">포스트 목록 페이지</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">LINK 2</a>
+                <c:url var="userListPage" value="/user/list"></c:url>
+                <a class="nav-link active" href="${userListPage }">회원 목록 페이지</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">LINK 3</a>
+                <a class="nav-link active" href="#">로그인</a>
             </li>
         </ul>
     </nav>

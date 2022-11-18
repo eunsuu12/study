@@ -60,5 +60,4 @@ public class PostService {
         return postMapper.selectByKeywordOrderByIdDesc(dto);
     }
     
-    // TODO: 새글작성 / 글번호검색 / 수정 / 삭제 서비스
 }

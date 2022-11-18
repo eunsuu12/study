@@ -18,7 +18,7 @@
     
     <header class="my-2 p-4 text-center text-bg-secondary">
         <h1>Spring MVC &amp; MyBatis</h1>
-        <h2>포스트 작성 페이지</h2>
+        <h2>회원 가입 페이지</h2>
     </header>
     
     <nav>
@@ -28,8 +28,8 @@
                 <a class="nav-link active" href="${mainPage }">메인 페이지</a>
             </li>
             <li class="nav-item">
-                <c:url var="postListPage" value="/post/list"></c:url>
-                <a class="nav-link active" href="${postListPage }">포스트 목록 페이지</a>
+                <c:url var="userListPage" value="/user/list"></c:url>
+                <a class="nav-link active" href="${userListPage }">회원 목록 페이지</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">LINK 3</a>
@@ -41,19 +41,19 @@
         <div class="card p-4">
             <form method="post">
                 <div class="my-4">
-                    <label for="title" class="form-label">제목</label>
-                    <input id="title" class="form-control" type="text" name="title" required autofocus />
+                    <label for="username" class="form-label">아이디</label>
+                    <input id="username" class="form-control" type="text" name="username" required autofocus />
                 </div>
                 <div class="my-4">
-                    <label for="content" class="form-label">내용</label>
-                    <textarea id="content" class="form-control" name="content" required></textarea>
+                    <label for="password" class="form-label">비밀번호</label>
+                    <input id="password" class="form-control" type="text" name="password" required />
                 </div>
                 <div class="my-4">
-                    <label for="author" class="form-label">작성자</label>
-                    <input id="author" class="form-control" type="text" name="author" required />
+                    <label for="email" class="form-label">메일</label>
+                    <input id="email" class="form-control" type="text" name="email" required />
                 </div>
                 <div class="my-4">
-                    <input class="form-control btn btn-success" type="submit" value="작성 완료" />
+                    <input class="form-control btn btn-success" type="submit" value="회원 가입" />
                 </div>
             </form>
         </div>

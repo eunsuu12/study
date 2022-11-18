@@ -28,14 +28,14 @@
                 <a class="nav-link active" href="${mainPage }">메인 페이지</a>
             </li>
             <li class="nav-item">
-                <c:url var="postListPage" value="/post/list" />
-                <a class="nav-link active" href="${postListPage }">포스트 목록 페이지</a>
+                <c:url var="userListPage" value="/user/list" />
+                <a class="nav-link active" href="${userListPage }">회원 목록 페이지</a>
             </li>
             <li class="nav-item">
-                <c:url var="postModifyPage" value="/post/modify">
-                    <c:param name="id" value="${post.id }"></c:param>
+                <c:url var="userModifyPage" value="/user/modify">
+                    <c:param name="id" value="${user.id }"></c:param>
                 </c:url>
-                <a class="nav-link active" href="${postModifyPage }">포스트 수정 페이지</a>
+                <a class="nav-link active" href="${userModifyPage }">회원 정보 수정 페이지</a>
             </li>
         </ul>
     </nav>
@@ -47,27 +47,23 @@
                 <form>
                     <div class="my-4">
                         <label for="id" class="form-label">번호</label>
-                        <input id="id" type="text" class="form-control" value="${post.id }" readonly/>
+                        <input id="id" type="text" class="form-control" value="${user.id }" readonly/>
                     </div>
                     <div class="my-4">
-                        <label for="title" class="form-label">제목</label>
-                        <input id="title" class="form-control" value="${post.title }" readonly />
+                        <label for="username" class="form-label">아이디</label>
+                        <input id="username" class="form-control" value="${user.username }" readonly />
                     </div>
                     <div class="my-4">
-                        <label for="content" class="form-label">내용</label>
-                        <textarea id="content" class="form-control" readonly>${post.content }</textarea>
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input id="password" class="form-control" value="${user.password }" readonly/>
                     </div>
                     <div class="my-4">
-                        <label for="author" class="form-label">작성자</label>
-                        <input id="author" class="form-control" value="${post.author }" readonly/>
+                        <label for="email" class="form-label">이메일</label>
+                        <input id="email" class="form-control" value="${user.email }" readonly/>
                     </div>
                     <div class="my-4">
-                        <label for="createdTime" class="form-label">작성시간</label>
-                        <input id="createdTime" class="form-control" value="${post.created_time }" readonly/>
-                    </div>
-                    <div class="my-4">
-                        <label for="modifiedTime" class="form-label">수정시간</label>
-                        <input id="modifiedTime" class="form-control" value="${post.modified_time }" readonly/>
+                        <label for="points" class="form-label">포인트</label>
+                        <input id="points" class="form-control" value="${user.points }" readonly/>
                     </div>
                 </form>
             </div>
