@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+<!-- /* layout/layout.html파일의 "content"프래그먼트에 삽입될 컨텍트 */ -->
+<div layout:fragment="content">
+    <div class="card my-2">
+        <div class="card-header">
+            <h2>포스트 목록 페이지</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>수정시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="post: ${ list }">
+                        <td th:text="${ post.id }"></td>
+                        <td th:text="${ post.title }"></td>
+                        <td th:text="${ post.author }"></td>
+                        <td th:text="${ post.modifiedTime }"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="createModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">작성 완료</h5>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>새 포스트([[ ${createdId} ]]) 작성 성공.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end.modal -->
+</div> <!-- end.content -->
+
+<script layout:fragment="script" th:inline="javascript">
+    if([[ ${createdId} ]]){
+    	// redirect attribute가 있는 경우
+        const createModal= document.querySelector('#createModal');
+    	const modal= new bootstrap.Modal(createModal);
+    	modal.show();
+    }
+    </script>
+
+</html>

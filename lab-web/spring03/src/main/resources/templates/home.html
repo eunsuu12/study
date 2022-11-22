@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th= "http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <title>Spring Boot</title>
-    </head>
-    <body>
-        <!-- [[ ${msg} ]] -->
-        <!--/* [[ ${msg} ]] */-->
-        <h1 th:text="${msg}"></h1>
-        <h2>[[ ${msg} ]]</h2>
-    </body>
+<html xmlns:th= "http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/basic-layout}">
+
+    <!-- /* layout/basic-layout.html 파일의 "content"레이아웃 프래그먼트를 채워줄 내용*/ -->
+    <div layout:fragment="content">
+        <div>
+            <h6 style="color: #eee">[[ ${msg} ]]</h6>
+            <h5 style="color: #ccc">[[ ${msg} ]]</h5>
+            <h4 style="color: #aaa">[[ ${msg} ]]</h4>
+            <h3 style="color: #888">[[ ${msg} ]]</h3>
+            <h2 style="color: #666">[[ ${msg} ]]</h2>
+            <h1 style="color: #444">[[ ${msg} ]]</h1>
+        </div>
+    </div>
+    <script layout:fragment="script" th:inline="javascript">
+    console.log('Thymeleaf 레이아웃 기능');
+    </script>
 </html>
