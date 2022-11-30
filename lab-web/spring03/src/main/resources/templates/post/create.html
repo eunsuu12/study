@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th= "http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout/layout}">
 
@@ -22,8 +23,9 @@
                     </div>
                     <div class="my-2">
                         <label for="author" class="form-label">작성자</label>
+                        <!-- 작성자는 로그인 사용자 아이디를 자동 삽입. readonly. -->
                         <input id="author" class="form-control" type="text"
-                        name="author" required />
+                        name="author" th:value="${ #authentication.name }" readonly />
                     </div>
                     <div class="my-2">
                         <input type="submit" class="form-control button btn-success"

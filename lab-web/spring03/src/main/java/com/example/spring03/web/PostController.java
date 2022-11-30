@@ -2,6 +2,7 @@ package com.example.spring03.web;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ public class PostController {
     
     private final PostService postService;
     
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/create") // GET 방식의 /post/create 요청을 처리하는 메서드.
     public void create() {
         log.info("create()");
@@ -32,6 +34,7 @@ public class PostController {
         // src/main/resources/templates/post/create.html
     }
     
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/create") // Post 방식의 /post/create 요청을 처리하는 메서드.
     public String create(PostCreateDto dto, RedirectAttributes attrs) {
         log.info("create(dto={})", dto);
@@ -45,6 +48,7 @@ public class PostController {
         return "redirect:/";
     }
     
+    @PreAuthorize("hasRole('USER')")
     @GetMapping({ "/detail", "/modify" })
     // 컨트롤러 메서드가 2개 이상의 요청 주소를 처리할 때는 mapping에서 요청 주소를 배열로 설정.
     public void detail(Integer id, Model model) {
@@ -55,6 +59,7 @@ public class PostController {
         model.addAttribute("post", post);
     }
     
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/delete")
     public String delete(Integer id, RedirectAttributes attrs) {
         log.info("delete(id={})", id);
@@ -66,6 +71,7 @@ public class PostController {
         return "redirect:/";
     }
 
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/update")
     public String update(PostUpdateDto dto) {
         log.info("update(dto={})", dto);
